@@ -11,7 +11,7 @@ def calcular_division(num1, num2):
     return num1//num2
 
 def calcular_tabla_multiplicar(num1, num2):
-    for num in range(0,num2, +1):
+    for num in range(0,num2 +1):
         print(f"{num1}x{num}= {num1*num}")
 
 
