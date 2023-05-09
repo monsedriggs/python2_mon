@@ -22,7 +22,7 @@ class Database:
                 print("Descripcion", item[2])
                 print("Tiempo", item[3])
                 print("Usuario", item[4])
-                print('❃❃❃❃❃❃❃❃❃❃\n')
+                print('❃ ❃ ❃ ❃ ❃ ❃ ❃ ❃ ❃ ❃\n')
         except Exception as e:
             print('Error: ', e)  
             raise 
