@@ -9,7 +9,7 @@ class Database:
             db = 'u484426513_apireact'
         )
         self.cursor = self.connection.cursor()
-        print('Estoy conectado a la base de datos')
+        print('\tConectada a la base de datos\n')
     
     def getProfe(self):
         sql= 'SELECT id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idcarreras FROM profesor'
