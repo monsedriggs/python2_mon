@@ -79,29 +79,71 @@ class Database:
         pass
 
     def updateStudent_SexoID(self, id, sexo):
-        pass
+        sql="UPDATE estudiante SET sexo='{}' WHERE id='{}'".format(sexo, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_DireccionID(self, id, direccion):
-        pass
+        sql="UPDATE estudiante SET direccion='{}' WHERE id='{}'".format(direccion, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_ApellidoPaternoID(self, id, apellido_paterno):
-        pass
+        sql="UPDATE estudiante SET apellido_paterno='{}' WHERE id='{}'".format(apellido_paterno, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_ApellidoMaternoID(self, id, apellido_materno):
-        pass
+        sql="UPDATE estudiante SET apellido_materno='{}' WHERE id='{}'".format(apellido_materno, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_NacionalidadID(self, id, nacionalidad):
-        pass
+        sql= "UPDATE estudiante SET nacionalidad='{}' WHERE id='{}'".format(nacionalidad, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_CarrerasID(self, id, id_carreras):
-        pass
+        sql= "UPDATE estudiante SET id_carreras='{}' WHERE id='{}'".format(id_carreras, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_UsuarioID(self, id, usuario):
-        pass
+        sql= "UPDATE estudiante SET usuario='{}' WHERE id='{}'".format(usuario, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
-        sql = "UPDATE estudiante SET cedula='{}', correo_electronico='{}', telefono='{}', telefono_celular='{}' WHERE id='{}'".format(nombre, descripcion, tiempo, usuario, ID) 
-        try:[]
+        sql = "UPDATE estudiante SET cedula='{}', correo_electronico='{}', telefono='{}', telefono_celular='{}', fecha_nacimiento='{}', sexo='{}', direccion='{}', nombre='{}', apellido_paterno='{}', apellido_materno='{}', nacionalidad='{}', id_carreras='{}', usuario='{}'WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario, id) 
+        try:
             self.cursor. execute(sql)
             self.connection.commit()
         except Exception as e:
