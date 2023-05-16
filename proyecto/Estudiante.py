@@ -61,22 +61,58 @@ class Database:
             raise
 
     def updateStudent_ID(self, id, nombre):
-        pass
+        sql="UPDATE estudiante SET nombre='{}' WHERE id='{}'".format(nombre,id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_CedulaID(self, id, cedula):
-        pass
+        sql="UPDATE estudiante SET cedula='{}' WHERE id='{}'".format(cedula, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_CorreoID(self, id, correo_electronico):
-        pass
+        sql="UPDATE estudiante SET correo_electronico='{}' WHERE id='{}'".format(correo_electronico, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_TelefonoID(self, id, telefono):
-        pass
+        sql= "UPDATE estudiante SET telefono='{}' WHERE id='{}'".format(telefono, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_TelCelularID(self, id, telefono_celular):
-        pass
+        sql="UPDATE estudiante SET telefono_celular='{}' WHERE id='{}'".format(telefono_celular, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateStudent_FechaNacimientoID(self, id, fecha_nacimiento):
-        pass
+        sql= "UPDATE estudiante SET fecha_nacimiento='{}' WHERE id='{}'".format(fecha_nacimiento, id)
+        try: 
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error. ', e)
+            raise
 
     def updateStudent_SexoID(self, id, sexo):
         sql="UPDATE estudiante SET sexo='{}' WHERE id='{}'".format(sexo, id)
