@@ -59,3 +59,44 @@ class Database:
         except Exception as e:
             print("Error: ", e)
             raise
+
+    def updateStudent_ID(self, id, nombre):
+        pass
+
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+    def updateStudent_CedulaID(self, id, cedula):
+        pass
+
+    def createStudent(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
+        sql= "INSERT INTO estudiante(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ('{}','{}','{}','{}','{}','{}', '{}','{}','{}','{}','{}','{}','{}','{}')".format(0, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e )
+            raise
+
+    def deleteStudent(self, id):
+        sql= "DELETE FROM `estudiante`WHERE id='{}'".format(id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+            print(f"Se ha eliminado el registro: {id}")
+        except Exception as e:
+            print("Error: ", e)
+            raise
