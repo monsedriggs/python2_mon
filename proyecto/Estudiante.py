@@ -100,7 +100,13 @@ class Database:
         pass
 
     def updateStudent_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
-        pass
+        sql = "UPDATE estudiante SET cedula='{}', correo_electronico='{}', telefono='{}', telefono_celular='{}' WHERE id='{}'".format(nombre, descripcion, tiempo, usuario, ID) 
+        try:[]
+            self.cursor. execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ',  e)
+            raise
 
     def createStudent(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
         sql= "INSERT INTO estudiante(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ('{}','{}','{}','{}','{}','{}', '{}','{}','{}','{}','{}','{}','{}','{}')".format(0, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario)
