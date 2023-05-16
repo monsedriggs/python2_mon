@@ -65,21 +65,41 @@ class Database:
 
     def updateStudent_CedulaID(self, id, cedula):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_CorreoID(self, id, correo_electronico):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_TelefonoID(self, id, telefono):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_TelCelularID(self, id, telefono_celular):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_FechaNacimientoID(self, id, fecha_nacimiento):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_SexoID(self, id, sexo):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_DireccionID(self, id, direccion):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_ApellidoPaternoID(self, id, apellido_paterno):
         pass
-    def updateStudent_CedulaID(self, id, cedula):
+
+    def updateStudent_ApellidoMaternoID(self, id, apellido_materno):
+        pass
+
+    def updateStudent_NacionalidadID(self, id, nacionalidad):
+        pass
+
+    def updateStudent_CarrerasID(self, id, id_carreras):
+        pass
+
+    def updateStudent_UsuarioID(self, id, usuario):
+        pass
+
+    def updateStudent_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
         pass
 
     def createStudent(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
