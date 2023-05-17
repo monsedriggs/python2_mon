@@ -61,13 +61,31 @@ class Database:
             raise
 
     def updateProfe_ID(self, id, nombre):
-        pass
+        sql="UPDATE profesor SET nombre='{}' WHERE id'{}'".format(nombre, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print("Error: ", e)
+            raise
 
     def updateProfe_CedulaID(self, id, cedula):
-        pass
+        sql="UPDATE profesor SET cedula='{}' WHERE id='{}'".format(cedula, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateProfe_CorreoID(self, id, correo_electronico):
-        pass
+        sql="UPDATE profesor SET correo_electronico='{}' WHERE id='{}'".format(correo_electronico, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateProfe_TelefonoID(self, id, telefono):
         pass
@@ -79,7 +97,13 @@ class Database:
         pass
 
     def updateProfe_SexoID(self, id, sexo):
-        pass
+        sql="UPDATE profesor SET sexo='{}' WHERE id='{}'".format(sexo, id)
+        try:
+            self.cursor.execute(sql)
+            self.conncetion.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateProfe_DireccionID(self, id, direccion):
         pass
