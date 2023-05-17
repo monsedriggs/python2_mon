@@ -89,7 +89,12 @@ def menu():
                     if actualizarE_op== 'a':
                         pass
                     elif actualizarE_op== 'b':
-                        pass
+                        id_actualizaCedulaStudent=input("Ingrese el ID que desea actualizar:\n")
+                        if id_actualizaCedulaStudent.isnumeric():
+                            cedula_CedulaStudent=input("Ingrese la actualización de la cédula:\n")
+                            student.updateStudent_CedulaID(cedula_CedulaStudent, id_actualizaCedulaStudent)
+                        else:
+                            print("Debe ingresar un ID numerico")
                     elif actualizarE_op== 'c':
                         pass
                     elif actualizarE_op== 'd':
