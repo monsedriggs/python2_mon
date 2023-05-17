@@ -178,13 +178,13 @@ class Database:
             raise
 
     def updateProfe_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras):
-            sql="UPDATE profesor SET cedula='{}',  correo_electronico='{}', telefono='{}', telefono_celular='{}', fecha_nacimiento='{}', sexo='{}', direccion='{}', nombre='{}', apellido_paterno='{}', apellido_materno='{}', nacionalidad='{}', usuario='{}', id_carreras='{}' WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras, id)
-            try:
-                self.cursor.execute(sql)
-                self.connection.commit()
-            except Exception as e:
-                print('Error: ', e)
-                raise
+        sql="UPDATE profesor SET cedula='{}',  correo_electronico='{}', telefono='{}', telefono_celular='{}', fecha_nacimiento='{}', sexo='{}', direccion='{}', nombre='{}', apellido_paterno='{}', apellido_materno='{}', nacionalidad='{}', usuario='{}', id_carreras='{}' WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def createProfe(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras ):
         sql="INSERT INTO profesor(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idcarreras) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(0, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras)
