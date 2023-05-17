@@ -124,25 +124,61 @@ class Database:
             raise
 
     def updateProfe_DireccionID(self, id, direccion):
-        pass
+        sql="UPDATE profesor SET direccion='{}' WHERE id='{}'".format(direccion, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateProfe_ApellidoPaternoID(self, id, apellido_paterno):
-        pass
+        sql="UPDATE profesor SET apellido_paterno='{}' WHERE id='{}'".format(apellido_paterno, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ', e)
+            raise
 
     def updateProfe_ApellidoMaternoID(self, id, apellido_materno):
-        pass
-
+        sql="UPDATE profesor SET apellido_materno='{}' WHERE id='{}'".format(apellido_materno, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print('Error: ',e)
+            raise
+            
     def updateProfe_NacionalidadID(self, id, nacionalidad):
-        pass
+        sql="UPDATE profesor SET nacionalidad='{}' WHERE id='{}'".format(nacionalidad, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print("Error: ", e)
+            raise
 
     def updateProfe_CarrerasID(self, id, id_carreras):
-        pass
+        sql="UPDATE profesor SET id_carreras='{}' WHERE id='{}'".format(id_carreras, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print("Error: ", e)
+            raise
 
     def updateProfe_UsuarioID(self, id, usuario):
-        pass
+        sql="UPDATE profesor SET usuario='{}' WHERE id='{}'".format(usuario, id)
+        try:
+            self.cursor.execute(sql)
+            self.connection.commit()
+        except Exception as e:
+            print("Error: ", e)
+            raise
 
     def updateProfe_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras):
-        pass
+            sql="UPDATE profesor SET cedula='{}'WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras, id)
 
     def createProfe(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras ):
         sql="INSERT INTO profesor(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idcarreras) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(0, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras)
