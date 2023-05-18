@@ -90,14 +90,14 @@ def menu():
                         id_actualizaCedulaStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCedulaStudent.isnumeric():
                             cedula_CedulaStudent=input("Escriba la actualización de la cedula:\n")
-                            student.updateStudent_CedulaID(cedula_CedulaStudent, id_actualizaCedulaStudent)
+                            student.updateStudent_CedulaID(id_actualizaCedulaStudent, cedula_CedulaStudent)
                         else:
                             print("Debe ingresar un ID numérico ")
                     elif actualizarE_op== 'b':
                         id_actualizaCorreoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCorreoStudent.isnumeric():
                             correo_CorreoStudent=input("Ingrese la actualización del correo:\n")
-                            student.updateStudent_CorreoID(correo_CorreoStudent, id_actualizaCorreoStudent)
+                            student.updateStudent_CorreoID(id_actualizaCorreoStudent, correo_CorreoStudent)
                         else:
                             print("Debe ingresar un ID numerico")
                     elif actualizarE_op== 'c':
