@@ -1,3 +1,7 @@
+'''
+Clase con funciones relacionadas al manejo de los datos en la base de datos de Profesor.
+Obtener todos los registros, uno en especifico, actualizar cada uno de los elementos en la base de datos o todos (de un registro especifico), crear un nuevo registro o eliminar uno
+'''
 import pymysql
 
 class Database:
