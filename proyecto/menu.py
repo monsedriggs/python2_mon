@@ -87,12 +87,17 @@ def menu():
                     actualizarE_op= input("Indique lo que desea actualizar:\n\ta)Cedula\n\tb)Correo Electrónico\n\tc)Telefono\n\td)Telefono Celular\n\te)Fecha de Nacimiento\n\tf)Sexo\n\tg)Dirección\n\th)Nombre\n\ti)Apellido Paterno\n\tj)Apellido Materno\n\tk)Nacionalidad\n\tl)ID Carreras\n\tm)Usuario\n\tn)Todos los datos")
                     actualizarE_op.lower()
                     if actualizarE_op== 'a':
-                        pass
+                        id_actualizaCedulaStudent=input("Ingrese el ID que desea actualizar:\n")
+                        if id_actualizaCedulaStudent.isnumeric():
+                            cedula_CedulaStudent=input("Escriba la actualización de la cedula:\n")
+                            student.updateStudent_CedulaID(cedula_CedulaStudent, id_actualizaCedulaStudent)
+                        else:
+                            print("Debe ingresar un ID numérico ")
                     elif actualizarE_op== 'b':
                         id_actualizaCorreoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCorreoStudent.isnumeric():
                             correo_CorreoStudent=input("Ingrese la actualización del correo:\n")
-                            student.updateStudent_CedulaID(cedula_CedulaStudent, id_actualizaCedulaStudent)
+                            student.updateStudent_CorreoID(correo_CorreoStudent, id_actualizaCorreoStudent)
                         else:
                             print("Debe ingresar un ID numerico")
                     elif actualizarE_op== 'c':
