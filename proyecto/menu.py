@@ -12,7 +12,7 @@ def menu():
         opcion=int(input("❀ Ingrese la opción donde desea acceder ❀:\n\t1)Curso\n\t2)Estudiante\n\t3)Profesor\n\t4)Grupo\n\t5)Salir\n"))
         if opcion ==1:#Todo lo relacionado a la base de datos de Curso
             while True:
-                print("Curso")
+                print("❀ Curso")
                 curso=C.Database()
                 curso_op= input("Indique la opción de lo que desea hacer:\n\ta)Consulta datos general\n\tb)Consulta datos individual por ID\n\tc)Actualiza un registro por medio del ID\n\td)Crea un registro\n\te)Elimina un registro por ID\n\tf)Volver al menu principal\n")
                 curso_op.lower()
@@ -31,14 +31,20 @@ def menu():
                         id_actualizaName= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaName.isnumeric():
                             nombre_Name= input("Escriba el nuevo nombre del registro que desea actualizar:\n")
-                            curso.updateCurso_ID(id_actualizaName, nombre_Name)
+                            if nombre_Name.isspace() or len(nombre_Name)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                curso.updateCurso_ID(id_actualizaName, nombre_Name)
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'b':
                         id_actualizaTime= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTime.isnumeric():
                             tiempo_Time= input("Indique el nuevo tiempo:\n")
-                            curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time)
+                            if tiempo_Time.isspace() or len(tiempo_Time)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time)
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'c':
@@ -71,7 +77,7 @@ def menu():
                     print("Debe ingresar una opción correcta\n")
         elif opcion==2:#Todo lo relacionado a la base de datos de Estudiante
             while True:
-                print("Estudiante")
+                print("❀ Estudiante")
                 student=E.Database()
                 estudiante_op= input("Indique la opción de lo que desea hacer:\n\ta)Consulta datos general\n\tb)Consulta datos individual por ID\n\tc)Actualiza un registro por medio del ID\n\td)Crea un registro\n\te)Elimina un registro por ID\n\tf)Volver al menu principal\n")
                 estudiante_op.lower()
@@ -225,7 +231,7 @@ def menu():
                     print("Debe ingresar una opción correcta\n")
         elif opcion==3:
             while True:
-                print("Profesor")
+                print("❀ Profesor")
                 profe=P.Database()
                 profe_op= input("Indique la opción de lo que desea hacer:\n\ta)Consulta datos general\n\tb)Consulta datos individual por ID\n\tc)Actualiza un registro por medio del ID\n\td)Crea un registro\n\te)Elimina un registro por ID\n\tf)Volver al menu principal\n")
                 profe_op.lower()
@@ -379,7 +385,7 @@ def menu():
                     print("Debe ingresar una opción correcta\n")
         elif opcion==4:
             while True:
-                print("Grupo")#Todo lo que tiene que ver con la base de datos de Grupo
+                print("❀ Grupo")#Todo lo que tiene que ver con la base de datos de Grupo
                 group=G.Database()
                 grupo_op= input("Indique la opción de lo que desea hacer:\n\ta)Consulta datos general\n\tb)Consulta datos individual por ID\n\tc)Actualiza un registro por medio del ID\n\td)Crea un registro\n\te)Elimina un registro por ID\n\tf)Volver al menu principal\n")
                 grupo_op.lower()
@@ -412,7 +418,7 @@ def menu():
                 else:
                     print("Debe ingresar una opción correcta\n")
         elif opcion==5:#Salir del menu
-            print("Hasta luego!❀")
+            print("Hasta luego! ❀")
             break
         else:
             print("Opción inválida, intente de nuevo\n")
