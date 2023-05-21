@@ -15,7 +15,7 @@ class Database:
         self.cursor = self.connection.cursor()
         print('\tConectada a la base de datos\n')
 
-    def getGroup(self):
+    def getGroup(self):#Funcion para obtener todos los registros
         sql= 'SELECT id, nombre FROM grupo' 
         try:
             self.cursor.excute(sql)
@@ -28,7 +28,7 @@ class Database:
             print('Error: ', e)  
             raise 
 
-    def getGroup_ID(self, id):
+    def getGroup_ID(self, id):#Funcion para obtener un registro especifico
         sql= 'SELECT id, nombre FROM grupo WHERE id={}'.format(id)
         try:
             self.cursor.excute(sql)
@@ -40,7 +40,7 @@ class Database:
             print('Error: ', e)  
             raise
 
-    def uptadeGroup_ID(self, id, nombre):
+    def uptadeGroup_ID(self, id, nombre):#Funciones para actualizar elementos de los registros
         sql= "UPDATE grupo SET nombre='{}' WHERE id='{}'".format(nombre, id)
         try:
             self.cursor.execute(sql)
@@ -49,7 +49,7 @@ class Database:
             print("Error: ", e)
             raise
 
-    def createGroup(self, nombre):
+    def createGroup(self, nombre):#Funcion para crear un nuevo registro
         sql= "INSERT INTO grupo(id, nombre) VALUES ('{}','{}')".format(0, nombre)
         try:
             self.cursor.execute(sql)
@@ -58,7 +58,7 @@ class Database:
             print('Error: ', e )
             raise
 
-    def deleteGroup(self,id):
+    def deleteGroup(self,id):#Funcion para eliminar un registro
         sql= "DELETE FROM `group`WHERE id='{}'".format(id)
         try:
             self.cursor.execute(sql)

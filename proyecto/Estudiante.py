@@ -15,7 +15,7 @@ class Database:
         self.cursor = self.connection.cursor()
         print('\tConectada a la base de datos\n')
 
-    def getStudent(self):
+    def getStudent(self):#Funcion para obtener todos los registros
         sql= 'SELECT id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario FROM estudiante'
         try:
             self.cursor.execute(sql)
@@ -40,7 +40,7 @@ class Database:
             print("Error: ", e)
             raise
 
-    def getStudent_ID(self, id):
+    def getStudent_ID(self, id):#Funcion para obtener un registro especifico
         sql= 'SELECT id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario FROM estudiante WHERE id={}'.format(id)
         try:
             self.cursor.execute(sql)
@@ -64,6 +64,7 @@ class Database:
             print("Error: ", e)
             raise
 
+#Funciones para actualizar elementos de los registros
     def updateStudent_ID(self, id, nombre):
         sql="UPDATE estudiante SET nombre='{}' WHERE id='{}'".format(nombre,id)
         try:
@@ -191,6 +192,7 @@ class Database:
             raise
 
     def createStudent(self, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario):
+        #Funcion para crear un nuevo registro
         sql= "INSERT INTO estudiante(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ('{}','{}','{}','{}','{}','{}', '{}','{}','{}','{}','{}','{}','{}','{}')".format(0, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, id_carreras, usuario)
         try:
             self.cursor.execute(sql)
@@ -199,7 +201,7 @@ class Database:
             print('Error: ', e )
             raise
 
-    def deleteStudent(self, id):
+    def deleteStudent(self, id):#Funcion para eliminar un registro
         sql= "DELETE FROM `estudiante`WHERE id='{}'".format(id)
         try:
             self.cursor.execute(sql)

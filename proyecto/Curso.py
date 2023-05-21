@@ -15,7 +15,7 @@ class Database:
         self.cursor = self.connection.cursor()
         print('\tConectada a la base de datos\n')
 
-    def getCurso(self):
+    def getCurso(self):#Funcion para obtener todos los registros
         sql= 'SELECT id, nombre, descripcion, tiempo, usuario FROM curso'
         try:
             self.cursor.execute(sql)
@@ -31,7 +31,7 @@ class Database:
             print('Error: ', e)  
             raise 
 
-    def getCurso_ID(self, id):
+    def getCurso_ID(self, id):#Funcion para obtener un registro especifico
         sql = 'SELECT id, nombre, descripcion, tiempo, usuario FROM curso WHERE id={}'.format(id)
         try:
             self.cursor.execute(sql)
@@ -46,7 +46,7 @@ class Database:
             print('Error: ', e )
             raise
 
-
+#Funciones para actualizar elementos de los registros
     def updateCurso_ID(self, id, nombre):
         sql = "UPDATE curso SET nombre='{}' WHERE id='{}'".format(nombre, id)
         try:
@@ -74,7 +74,7 @@ class Database:
             print('Error: ', e )
             raise 
 
-    def createCurso(self, nombre, descripcion, tiempo, usuario):
+    def createCurso(self, nombre, descripcion, tiempo, usuario):#Funcion para crear un nuevo registro
         sql = "INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ('{}','{}','{}','{}','{}')".format(0, nombre, descripcion, tiempo, usuario)
         try:
             self.cursor.execute(sql)
@@ -83,7 +83,7 @@ class Database:
             print('Error: ', e )
             raise
 
-    def deleteCurso(self, id):
+    def deleteCurso(self, id):#Funcion para eliminar un registro
         sql= "DELETE FROM `curso`WHERE id='{}'".format(id)
         try:
             self.cursor.execute(sql)

@@ -6,7 +6,8 @@ import Curso as C
 import Estudiante as E
 import Profesor as P
 import Grupo as G
-
+import Validacion as V
+    
 def menu():
     while True:
         opcion=int(input("❀ Ingrese la opción donde desea acceder ❀:\n\t1)Curso\n\t2)Estudiante\n\t3)Profesor\n\t4)Grupo\n\t5)Salir\n"))
@@ -31,40 +32,58 @@ def menu():
                         id_actualizaName= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaName.isnumeric():
                             nombre_Name= input("Escriba el nuevo nombre del registro que desea actualizar:\n")
-                            if nombre_Name.isspace() or len(nombre_Name)==0:
-                                print("Error, debe escribir algo\n")
-                            else:
-                                curso.updateCurso_ID(id_actualizaName, nombre_Name)
+                            V.validar_input(nombre_Name, curso.updateCurso_ID(id_actualizaName, nombre_Name))  
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'b':
                         id_actualizaTime= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTime.isnumeric():
                             tiempo_Time= input("Indique el nuevo tiempo:\n")
-                            if tiempo_Time.isspace() or len(tiempo_Time)==0:
-                                print("Error, debe escribir algo\n")
-                            else:
-                                curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time)
+                            V.validar_input(tiempo_Time, curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time))
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'c':
                         id_actualizaTotal= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTotal.isnumeric():
                             nombre_Total= input("Escriba el nuevo nombre del registro que desea actualizar:\n")
-                            descripcion_Total= input("Escriba la nueva descripcion:\n")
-                            tiempo_Total= input("Indique el nuevo tiempo:\n")
-                            usuario_Total= input("Escriba el usuario:\n")
-                            curso.updateCurso_TotalID(id_actualizaTotal, nombre_Total, descripcion_Total, tiempo_Total, usuario_Total)
+                            if nombre_Total.isspace() or len(nombre_Total)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                descripcion_Total= input("Escriba la nueva descripcion:\n")
+                                if descripcion_Total.isspace() or len(descripcion_Total)==0:
+                                    print("Error, debe escribir algo\n")
+                                else:
+                                    tiempo_Total= input("Indique el nuevo tiempo:\n")
+                                    if tiempo_Total.isspace() or len(tiempo_Total)==0:
+                                        print("Error, debe escribir algo\n")
+                                    else:
+                                        usuario_Total= input("Escriba el usuario:\n")
+                                        if usuario_Total.isspace() or len(usuario_Total)==0:
+                                            print("Error, debe escribir algo\n")
+                                        else:
+                                            curso.updateCurso_TotalID(id_actualizaTotal, nombre_Total, descripcion_Total, tiempo_Total, usuario_Total)
                         else:
                             print("Debe ingresar un ID numérico\n")
                     else:
                         print("Error, ingrese una opcion válida\n")
                 elif curso_op== 'd':#Permite al usuario crear un nuevo registro
                     new_name= input("Ingrese el nombre del registro que quiere crear:\n")
-                    new_desc= input("Ingrese la descripcion:\n")
-                    new_time= input("Ingrese el tiempo:\n")
-                    new_usuario= input("Ingrese el usuario:\n")
-                    curso.createCurso(new_name, new_desc, new_time, new_usuario)
+                    if new_name.isspace() or len(new_name)==0:
+                        print("Error, debe escribir algo\n")
+                    else:
+                        new_desc= input("Ingrese la descripcion:\n")
+                        if new_desc.isspace() or len(new_desc)==0:
+                            print("Error, debe escribir algo\n")
+                        else:
+                            new_time= input("Ingrese el tiempo:\n")
+                            if new_time.isspace() or len(new_time)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                new_usuario= input("Ingrese el usuario:\n")
+                                if new_usuario.isspace() or len(new_usuario)==0:
+                                    print("Error, debe escribir algo\n")
+                                else:
+                                    curso.createCurso(new_name, new_desc, new_time, new_usuario)
                 elif curso_op== 'e':#Permite al usuario eliminar un registro mediante el ID 
                     delete_id= input("Ingrese el ID que desea eliminar:\n")
                     if delete_id.isnumeric():
@@ -96,91 +115,127 @@ def menu():
                         id_actualizaCedulaStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCedulaStudent.isnumeric():
                             cedula_CedulaStudent=input("Escriba la actualización de la cedula:\n")
-                            student.updateStudent_CedulaID(id_actualizaCedulaStudent, cedula_CedulaStudent)
+                            V.validar_input(cedula_CedulaStudent, student.updateStudent_CedulaID(id_actualizaCedulaStudent, cedula_CedulaStudent))
                         else:
                             print("Debe ingresar un ID numérico\n ")
                     elif actualizarE_op== 'b':
                         id_actualizaCorreoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCorreoStudent.isnumeric():
                             correo_CorreoStudent=input("Ingrese la actualización del correo:\n")
-                            student.updateStudent_CorreoID(id_actualizaCorreoStudent, correo_CorreoStudent)
+                            if correo_CorreoStudent.isspace() or len(correo_CorreoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_CorreoID(id_actualizaCorreoStudent, correo_CorreoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'c':
                         id_actualizaTelefonoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTelefonoStudent.isnumeric():
                             tel_TelefonoStudent=input("Ingrese la actualización del telefono:\n")
-                            student.updateStudent_TelefonoID(id_actualizaTelefonoStudent, tel_TelefonoStudent)
+                            if tel_TelefonoStudent.isspace() or len(tel_TelefonoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_TelefonoID(id_actualizaTelefonoStudent, tel_TelefonoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'd':
                         id_actualizaCelularStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCelularStudent.isnumeric():
                             cel_TelCelStudent=input("Ingrese la actualización del celular:\n")
-                            student.updateStudent_TelCelularID(id_actualizaCelularStudent, cel_TelCelStudent)
+                            if cel_TelCelStudent.isspace() or len(cedula_CedulaStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_TelCelularID(id_actualizaCelularStudent, cel_TelCelStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'e':
                         id_actualizaFechaNacStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaFechaNacStudent.isnumeric():
                             fecha_NacimientoStudent=input("Ingrese la actualización de la fcha de nacimiento:\n")
-                            student.updateStudent_FechaNacimientoID(id_actualizaFechaNacStudent, fecha_NacimientoStudent)
+                            if fecha_NacimientoStudent.isspace() or len(fecha_NacimientoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_FechaNacimientoID(id_actualizaFechaNacStudent, fecha_NacimientoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'f':
                         id_actualizaSexoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaSexoStudent.isnumeric():
                             sexo_SexoStudent=input("Ingrese la actualización del sexo:\n")
-                            student.updateStudent_SexoID(id_actualizaSexoStudent, sexo_SexoStudent)
+                            if sexo_SexoStudent.isspace() or len(sexo_SexoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_SexoID(id_actualizaSexoStudent, sexo_SexoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'g':
                         id_actualizaDireccionStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaDireccionStudent.isnumeric():
                             direc_DireccionStudent=input("Ingrese la actualización de la direccion:\n")
-                            student.updateStudent_DireccionID(id_actualizaDireccionStudent, direc_DireccionStudent)
+                            if direc_DireccionStudent.isspace() or len(direc_DireccionStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_DireccionID(id_actualizaDireccionStudent, direc_DireccionStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'h':
                         id_actualizaNameStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaNameStudent.isnumeric():
                             nombre_NameStudent=input("Ingrese la actualización del nombre:\n")
-                            student.updateStudent_ID(id_actualizaNameStudent, nombre_NameStudent)
+                            if nombre_NameStudent.isspace() or len(nombre_NameStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_ID(id_actualizaNameStudent, nombre_NameStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'i':
                         id_actualizaApPaternoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaApPaternoStudent.isnumeric():
                             apellido_PaternoStudent=input("Ingrese la actualización del apellido paterno:\n")
-                            student.updateStudent_ApellidoPaternoID(id_actualizaApPaternoStudent, apellido_PaternoStudent)
+                            if apellido_PaternoStudent.isspace() or len(apellido_PaternoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_ApellidoPaternoID(id_actualizaApPaternoStudent, apellido_PaternoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'j':
                         id_actualizaApMaternoStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaApMaternoStudent.isnumeric():
                             apellido_MaternoStudent=input("Ingrese la actualización del apellido materno:\n")
-                            student.updateStudent_ApellidoMaternoID(id_actualizaApMaternoStudent, apellido_MaternoStudent)
+                            if apellido_MaternoStudent.isspace() or len(apellido_MaternoStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else: 
+                                student.updateStudent_ApellidoMaternoID(id_actualizaApMaternoStudent, apellido_MaternoStudent)
                         else:
                             print("Debe ingresar un ID numerico\n" )
                     elif actualizarE_op== 'k':
                         id_actualizaNacionalidadStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaNacionalidadStudent.isnumeric():
                             nac_NacionalidadStudent=input("Ingrese la actualización de la nacionalidad:\n")
-                            student.updateStudent_NacionalidadID(id_actualizaNacionalidadStudent, nac_NacionalidadStudent)
+                            if nac_NacionalidadStudent.isspace() or len(nac_NacionalidadStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_NacionalidadID(id_actualizaNacionalidadStudent, nac_NacionalidadStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'l':
                         id_actualizaCarrerasStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCarrerasStudent.isnumeric():
                             carrera_IDCarreraStudent=input("Ingrese la actualización del ID de Carrera:\n")
-                            student.updateStudent_CarrerasID(id_actualizaCarrerasStudent, carrera_IDCarreraStudent)
+                            if carrera_IDCarreraStudent.isspace() or len(carrera_IDCarreraStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_CarrerasID(id_actualizaCarrerasStudent, carrera_IDCarreraStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'm':
                         id_actualizaUsuarioStudent=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaUsuarioStudent.isnumeric():
                             usuario_UserStudent=input("Ingrese la actualización del usuario:\n")
-                            student.updateStudent_UsuarioID(id_actualizaUsuarioStudent, usuario_UserStudent)
+                            if usuario_UserStudent.isspace() or len(usuario_UserStudent)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                student.updateStudent_UsuarioID(id_actualizaUsuarioStudent, usuario_UserStudent)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarE_op== 'n':
@@ -250,77 +305,110 @@ def menu():
                         id_actualizaCedulaProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCedulaProfe.isnumeric():
                             cedula_CedulaProfe=input("Escriba la actualización de la cedula:\n")
-                            profe.updateProfe_CedulaID(id_actualizaCedulaProfe, cedula_CedulaProfe)
+                            if cedula_CedulaProfe.isspace() or len(cedula_CedulaProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_CedulaID(id_actualizaCedulaProfe, cedula_CedulaProfe)
                         else:
                             print("Debe ingresar un ID numérico\n ")
                     elif actualizarP_op== 'b':
                         id_actualizaCorreoProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCorreoProfe.isnumeric():
                             correo_CorreoProfe=input("Ingrese la actualización del correo:\n")
-                            profe.updateProfe_CorreoID(id_actualizaCorreoProfe, correo_CorreoProfe)
+                            if correo_CorreoProfe.isspace() or len(correo_CorreoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_CorreoID(id_actualizaCorreoProfe, correo_CorreoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'c':
                         id_actualizaTelefonoProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTelefonoProfe.isnumeric():
                             tel_TelefonoProfe=input("Ingrese la actualización del telefono:\n")
-                            profe.updateProfe_TelefonoID(id_actualizaTelefonoProfe, tel_TelefonoProfe)
+                            if tel_TelefonoProfe.isspace() or len(tel_TelefonoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_TelefonoID(id_actualizaTelefonoProfe, tel_TelefonoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'd':
                         id_actualizaCelularProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaCelularProfe.isnumeric():
                             cel_TelCelProfe=input("Ingrese la actualización del celular:\n")
-                            profe.updateStudent_TelCelularID(id_actualizaCelularProfe, cel_TelCelProfe)
+                            if cel_TelCelProfe.isspace() or len(cel_TelCelProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateStudent_TelCelularID(id_actualizaCelularProfe, cel_TelCelProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'e':
                         id_actualizaFechaNacProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaFechaNacProfe.isnumeric():
                             fecha_NacimientoProfe=input("Ingrese la actualización de la fcha de nacimiento:\n")
-                            profe.updateProfe_FechaNacimientoID(id_actualizaFechaNacProfe, fecha_NacimientoProfe)
+                            if fecha_NacimientoProfe.isspace() or len(fecha_NacimientoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_FechaNacimientoID(id_actualizaFechaNacProfe, fecha_NacimientoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'f':
                         id_actualizaSexoProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaSexoProfe.isnumeric():
                             sexo_SexoProfe=input("Ingrese la actualización del sexo:\n")
-                            profe.updateProfe_SexoID(id_actualizaSexoProfe, sexo_SexoProfe)
+                            if sexo_SexoProfe.isspace() or len(sexo_SexoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_SexoID(id_actualizaSexoProfe, sexo_SexoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'g':
                         id_actualizaDireccionProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaDireccionProfe.isnumeric():
                             direc_DireccionProfe=input("Ingrese la actualización de la direccion:\n")
-                            profe.updateProfe_DireccionID(id_actualizaDireccionProfe, direc_DireccionProfe)
+                            if direc_DireccionProfe.isspace() or len(direc_DireccionProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_DireccionID(id_actualizaDireccionProfe, direc_DireccionProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'h':
                         id_actualizaNameProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaNameProfe.isnumeric():
                             nombre_NameProfe=input("Ingrese la actualización del nombre:\n")
-                            profe.updateProfe_ID(id_actualizaNameProfe, nombre_NameProfe)
+                            if nombre_NameProfe.isspace() or len(nombre_NameProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_ID(id_actualizaNameProfe, nombre_NameProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'i':
                         id_actualizaApPaternoProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaApPaternoProfe.isnumeric():
                             apellido_PaternoProfe=input("Ingrese la actualización del apellido paterno:\n")
-                            profe.updateProfe_ApellidoPaternoID(id_actualizaApPaternoProfe, apellido_PaternoProfe)
+                            if apellido_PaternoProfe.isspace() or len(apellido_PaternoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_ApellidoPaternoID(id_actualizaApPaternoProfe, apellido_PaternoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'j':
                         id_actualizaApMaternoProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaApMaternoProfe.isnumeric():
                             apellido_MaternoProfe=input("Ingrese la actualización del apellido materno:\n")
-                            profe.updateProfe_ApellidoMaternoID(id_actualizaApMaternoProfe, apellido_MaternoProfe)
+                            if apellido_MaternoProfe.isspace() or len(apellido_MaternoProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_ApellidoMaternoID(id_actualizaApMaternoProfe, apellido_MaternoProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'k':
                         id_actualizaNacionalidadProfe=input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaNacionalidadProfe.isnumeric():
                             nac_NacionalidadProfe=input("Ingrese la actualización de la nacionalidad:\n")
-                            profe.updateProfe_NacionalidadID(id_actualizaNacionalidadProfe, nac_NacionalidadProfe)
+                            if nac_NacionalidadProfe.isspace() or len(nac_NacionalidadProfe)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                profe.updateProfe_NacionalidadID(id_actualizaNacionalidadProfe, nac_NacionalidadProfe)
                         else:
                             print("Debe ingresar un ID numerico\n")
                     elif actualizarP_op== 'l':
@@ -401,12 +489,18 @@ def menu():
                     id_actualizaGroup= input("Ingrese el ID que desea actualizar:\n")
                     if id_actualizaGroup.isnumeric():
                         nombreGroup= int("Ecriba el nombre:\n")
-                        group.uptadeGroup_ID(id_actualizaGroup, nombreGroup)
+                        if nombreGroup.isspace() or len(nombreGroup)==0:
+                            print("Error, debe escribir algo\n")
+                        else:
+                            group.uptadeGroup_ID(id_actualizaGroup, nombreGroup)
                     else:
                         print("Debe ingresar un ID numérico\n")
                 elif grupo_op== 'd':#Permite al usuario crear un nuevo registro
                     new_GroupName=("Ingrese el nuevo nombre:\n")
-                    group.createGroup(new_GroupName)
+                    if new_GroupName.isspace() or len(new_GroupName)==0:
+                        print("Error, debe escribir algo\n")
+                    else:
+                        group.createGroup(new_GroupName)
                 elif grupo_op== 'e':#Permite al usuario eliminar un registro mediante el ID 
                     deleteGroup_id= input("Ingrese el ID que desea eliminar:\n")
                     if deleteGroup_id.isnumeric():
