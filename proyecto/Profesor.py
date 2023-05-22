@@ -70,6 +70,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el nombre del registro: {id}")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -79,6 +80,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado la cedula del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -88,6 +90,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el correo del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -97,6 +100,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el telefono del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -106,6 +110,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el celular del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -115,6 +120,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado la fecha de nacimiento del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -124,6 +130,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.conncetion.commit()
+            print(f"Se ha actualizado el sexo del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -133,6 +140,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado la direccion del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -142,6 +150,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el apellido paterno del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -151,6 +160,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el apellido materno del registro: {id}")
         except Exception as e:
             print('Error: ',e)
             raise
@@ -160,6 +170,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado la nacionalidad del registro: {id}")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -169,6 +180,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el ID de carreras del registro: {id}")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -178,6 +190,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el usuario del registro: {id}")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -187,6 +200,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se han actualizado todos los datos del registro: {id}")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -197,6 +211,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print("Se ha creado un nuevo registro")
         except Exception as e:
             print('Error: ', e )
             raise

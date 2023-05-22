@@ -200,38 +200,110 @@ def menu():
                         id_actualizaTotalStudent= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTotalStudent.isnumeric():
                             nombre_StudentTotal=input("Ingrese el nuevo nombre del registro que quiere actualizar:\n")
-                            apellidoPaterno_StudentTotal= input("Apellido Paterno:\n")
-                            apellidoMaterno_StudentTotal= input("Apellido Materno:\n")
-                            cedula_StudentTotal= input("Cédula:\n")
-                            correo_StudentTotal= input("Correo Electrónico:\n")
-                            telefono_StudentTotal= input("Telefono:\n")
-                            celular_StudentTotal= input("Telefono Celular:\n")
-                            fecha_StudentTotal= input("Fecha de Nacimiento:\n")
-                            sexo_StudentTotal= input("Sexo:\n")
-                            direccion_StudentTotal= input("Direccion:\n")
-                            nacionalidad_StudentTotal= input("Nacionalidad:\n")
-                            carreras_StudentTotal= input("ID de Carrera:\n")
-                            usuario_StudentTotal= input("Usuario:\n")
-                            student.updateStudent_TotalID(id_actualizaTotalStudent, cedula_StudentTotal, correo_StudentTotal, telefono_StudentTotal, celular_StudentTotal, fecha_StudentTotal, sexo_StudentTotal, direccion_StudentTotal, nombre_StudentTotal, apellidoPaterno_StudentTotal, apellidoMaterno_StudentTotal, nacionalidad_StudentTotal, carreras_StudentTotal, usuario_StudentTotal)
+                            if nombre_StudentTotal.isspace() or len(nombre_StudentTotal)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                apellidoPaterno_StudentTotal= input("Apellido Paterno:\n")
+                                if apellidoPaterno_StudentTotal.isspace() or len(apellidoPaterno_StudentTotal)==0:
+                                    print("Error, debe escribir algo\n")
+                                else:
+                                    apellidoMaterno_StudentTotal= input("Apellido Materno:\n")
+                                    if apellidoMaterno_StudentTotal.isspace() or len(apellidoMaterno_StudentTotal)==0:
+                                        print("Error, debe escribir algo\n")
+                                    else:
+                                        cedula_StudentTotal= input("Cédula:\n")
+                                        if cedula_StudentTotal.isspace() or len(cedula_StudentTotal)==0:
+                                            print("Error, debe escribir algo\n")
+                                        else:
+                                            correo_StudentTotal= input("Correo Electrónico:\n")
+                                            if correo_StudentTotal.isspace() or len(correo_StudentTotal)==0:
+                                                print("Error, debe escribir algo\n")
+                                            else:
+                                                telefono_StudentTotal= input("Telefono:\n")
+                                                if telefono_StudentTotal.isspace() or len(telefono_StudentTotal)==0:
+                                                    print("Error, debe escribir algo\n")
+                                                else:
+                                                    celular_StudentTotal= input("Telefono Celular:\n")
+                                                    if celular_StudentTotal.isspace() or len(celular_StudentTotal)==0:
+                                                        print("Error, debe escribir algo\n")
+                                                    else:
+                                                        fecha_StudentTotal= input("Fecha de Nacimiento:\n")
+                                                        if fecha_StudentTotal.isspace() or len(fecha_StudentTotal)==0:
+                                                            print("Error, debe escribir algo\n")
+                                                        else:
+                                                            sexo_StudentTotal= input("Sexo:\n")
+                                                            if sexo_StudentTotal.isspace() or len(sexo_StudentTotal)==0:
+                                                                print("Error, debe escribir algo\n")
+                                                            else:
+                                                                direccion_StudentTotal= input("Direccion:\n")
+                                                                if direccion_StudentTotal.isspace() or len(direccion_StudentTotal)==0:
+                                                                    print("Error, debe escribir algo\n")
+                                                                else:
+                                                                    nacionalidad_StudentTotal= input("Nacionalidad:\n")
+                                                                    if nacionalidad_StudentTotal.isspace() or len(nacionalidad_StudentTotal)==0:
+                                                                        print("Error, debe escribir algo\n")
+                                                                    else:
+                                                                        carreras_StudentTotal= input("ID de Carrera:\n")
+                                                                        if carreras_StudentTotal.isspace() or len(carreras_StudentTotal)==0:
+                                                                            print("Error, debe escribir algo\n")
+                                                                        else:
+                                                                            usuario_StudentTotal= input("Usuario:\n")
+                                                                            V.validar_input(usuario_StudentTotal, student.updateStudent_TotalID(id_actualizaTotalStudent, cedula_StudentTotal, correo_StudentTotal, telefono_StudentTotal, celular_StudentTotal, fecha_StudentTotal, sexo_StudentTotal, direccion_StudentTotal, nombre_StudentTotal, apellidoPaterno_StudentTotal, apellidoMaterno_StudentTotal, nacionalidad_StudentTotal, carreras_StudentTotal, usuario_StudentTotal))
                         else:  
                             print("Debe ingresar un ID numérico\n")
                     else:
                         print("Error, ingrese una opcion válida\n")
                 elif estudiante_op== 'd':#Permite al usuario crear un nuevo registro
                     new_StudentName=input("Ingrese el nombre del registro que quiere crear:\n")
-                    new_StudentAPatern= input("Apellido Paterno:\n")
-                    new_StudentAMatern= input("Apellido Materno:\n")
-                    new_StudentCedula= input("Cédula:\n")
-                    new_StudentCorreo= input("Correo Electrónico:\n")
-                    new_StudentTel= input("Telefono:\n")
-                    new_StudentCel= input("Telefono Celular:\n")
-                    new_StudentFecha= input("Fecha de Nacimiento:\n")
-                    new_StudentSexo= input("Sexo:\n")
-                    new_StudentDirec= input("Direccion:\n")
-                    new_StudentNacional= input("Nacionalidad:\n")
-                    new_StudentIDCarrera= input("ID de Carrera:\n")
-                    new_StudentUsuario= input("Usuario:\n")
-                    student.createStudent(new_StudentCedula, new_StudentCorreo, new_StudentTel, new_StudentCel, new_StudentFecha, new_StudentSexo, new_StudentDirec, new_StudentName, new_StudentAPatern, new_StudentAMatern, new_StudentNacional, new_StudentIDCarrera, new_StudentUsuario)
+                    if new_StudentName.isspace() or len(new_StudentName)==0:
+                        print("Error, debe escribir algo\n")
+                    else:
+                        new_StudentAPatern= input("Apellido Paterno:\n")
+                        if new_StudentAPatern.isspace() or len(new_StudentAPatern)==0:
+                            print("Error, debe escribir algo\n")
+                        else:
+                            new_StudentAMatern= input("Apellido Materno:\n")
+                            if new_StudentAMatern.isspace() or len(new_StudentAMatern)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                new_StudentCedula= input("Cédula:\n")
+                                if new_StudentCedula.isspace() or len(new_StudentCedula)==0:
+                                    print("Error, debe escribir algo\n")
+                                else:
+                                    new_StudentCorreo= input("Correo Electrónico:\n")
+                                    if new_StudentCorreo.isspace() or len(new_StudentCorreo)==0:
+                                        print("Error, debe escribir algo\n")
+                                    else:
+                                        new_StudentTel= input("Telefono:\n")
+                                        if new_StudentTel.isspace() or len(new_StudentTel)==0:
+                                            print("Error, debe escribir algo\n")
+                                        else:
+                                            new_StudentCel= input("Telefono Celular:\n")
+                                            if new_StudentCel.isspace() or len(new_StudentCel)==0:
+                                                print("Error, debe escribir algo\n")
+                                            else:
+                                                new_StudentFecha= input("Fecha de Nacimiento:\n")
+                                                if new_StudentFecha.isspace() or len(new_StudentFecha)==0:
+                                                    print("Error, debe escribir algo\n")
+                                                else:
+                                                    new_StudentSexo= input("Sexo:\n")
+                                                    if new_StudentSexo.isspace() or len(new_StudentSexo)==0:
+                                                        print("Error, debe escribir algo\n")
+                                                    else:
+                                                        new_StudentDirec= input("Direccion:\n")
+                                                        if new_StudentDirec.isspace() or len(new_StudentDirec)==0:
+                                                            print("Error, debe escribir algo\n")
+                                                        else:
+                                                            new_StudentNacional= input("Nacionalidad:\n")
+                                                            if new_StudentNacional.isspace() or len(new_StudentNacional)==0:
+                                                                print("Error, debe escribir algo\n")
+                                                            else:
+                                                                new_StudentIDCarrera= input("ID de Carrera:\n")
+                                                                if new_StudentIDCarrera.isspace() or len(new_StudentIDCarrera)==0:
+                                                                    print("Error, debe escribir algo\n")
+                                                                else:
+                                                                    new_StudentUsuario= input("Usuario:\n")
+                                                                    V.validar_input(new_StudentUsuario, student.createStudent(new_StudentCedula, new_StudentCorreo, new_StudentTel, new_StudentCel, new_StudentFecha, new_StudentSexo, new_StudentDirec, new_StudentName, new_StudentAPatern, new_StudentAMatern, new_StudentNacional, new_StudentIDCarrera, new_StudentUsuario))
                 elif estudiante_op== 'e':#Permite al usuario eliminar un registro mediante el ID 
                     deleteStudent_id= input("Ingrese el ID que desea eliminar:\n")
                     if deleteStudent_id.isnumeric():

@@ -32,7 +32,7 @@ class Database:
             raise 
 
     def getCurso_ID(self, id):#Funcion para obtener un registro especifico
-        sql = 'SELECT id, nombre, descripcion, tiempo, usuario FROM curso WHERE id={}'.format(id)
+        sql = "SELECT id, nombre, descripcion, tiempo, usuario FROM curso WHERE id='{}'".format(id)
         try:
             self.cursor.execute(sql)
             curso = self.cursor.fetchone()
@@ -52,6 +52,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el nombre del registro: {id}")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -61,6 +62,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se ha actualizado el tiempo del registro: {id}")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -70,6 +72,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print(f"Se han actualizado todos los datos del registro: {id}")
         except Exception as e:
             print('Error: ', e )
             raise 
@@ -79,6 +82,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            print("Se ha creado un nuevo registro")
         except Exception as e:
             print('Error: ', e )
             raise
