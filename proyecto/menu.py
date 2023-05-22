@@ -32,7 +32,10 @@ def menu():
                         id_actualizaName= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaName.isnumeric():
                             nombre_Name= input("Escriba el nuevo nombre del registro que desea actualizar:\n")
-                            V.validar_input(nombre_Name, curso.updateCurso_ID(id_actualizaName, nombre_Name))  
+                            if nombre_Name.isspace() or len(nombre_Name)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                curso.updateCurso_ID(id_actualizaName, nombre_Name) 
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'b':
@@ -558,12 +561,18 @@ def menu():
                     id_actualizaGroup= input("Ingrese el ID que desea actualizar:\n")
                     if id_actualizaGroup.isnumeric():
                         nombreGroup= input("Ecriba el nombre:\n")
-                        V.validar_input(nombreGroup, group.uptadeGroup_ID(id_actualizaGroup, nombreGroup))
+                        if nombreGroup.isspace() or len(nombreGroup)==0:
+                            print("Error, debe escribir algo\n")
+                        else:
+                            group.uptadeGroup_ID(id_actualizaGroup, nombreGroup)
                     else:
                         print("Debe ingresar un ID numérico\n")
                 elif grupo_op== 'd':#Permite al usuario crear un nuevo registro
-                    new_GroupName=("Ingrese el nuevo nombre:\n")
-                    V.validar_input(new_GroupName, group.createGroup(new_GroupName))
+                    new_GroupName=input("Ingrese el nuevo nombre:\n")
+                    if new_GroupName.isspace() or len(new_GroupName)==0:
+                        print("Error, debe escribir algo\n")
+                    else:
+                            group.createGroup(new_GroupName)
                 elif grupo_op== 'e':#Permite al usuario eliminar un registro mediante el ID 
                     deleteGroup_id= input("Ingrese el ID que desea eliminar:\n")
                     if deleteGroup_id.isnumeric():

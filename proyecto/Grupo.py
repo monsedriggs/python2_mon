@@ -61,7 +61,7 @@ class Database:
             raise
 
     def deleteGroup(self,id):#Funcion para eliminar un registro
-        sql= "DELETE FROM `group`WHERE id='{}'".format(id)
+        sql= "DELETE FROM `grupo` WHERE  id ='{}'".format(id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
