@@ -66,11 +66,11 @@ class Database:
 
 #Funciones para actualizar elementos de los registros
     def updateProfe_ID(self, id, nombre):
-        sql="UPDATE profesor SET nombre='{}' WHERE id'{}'".format(nombre, id)
+        sql="UPDATE estudiante SET nombre='{}' WHERE id='{}'".format(nombre,id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el nombre del registro: {id}")
+            print(f"Se ha actualizado el nombre del registro: {id}\n")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -80,17 +80,17 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado la cedula del registro: {id}")
+            print(f"Se ha actualizado la cedula del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
 
     def updateProfe_CorreoID(self, id, correo_electronico):
-        sql="UPDATE profesor SET correo_electronico='{}' WHERE id='{}'".format(correo_electronico, id)
+        sql="UPDATE profesor SET correoelectronico='{}' WHERE id='{}'".format(correo_electronico, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el correo del registro: {id}")
+            print(f"Se ha actualizado el correo del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -100,27 +100,27 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el telefono del registro: {id}")
+            print(f"Se ha actualizado el telefono del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
         
     def updateProfe_TelCelularID(self, id, telefono_celular):
-        sql="UPDATE profesor SET telefono_celular='{}' WHERE id='{}'".format(telefono_celular, id)
+        sql="UPDATE profesor SET telefonocelular='{}' WHERE id='{}'".format(telefono_celular, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el celular del registro: {id}")
+            print(f"Se ha actualizado el celular del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
 
     def updateProfe_FechaNacimientoID(self, id, fecha_nacimiento):
-        sql="UPDATE profesor SET fecha_nacimiento='{}' WHERE id='{}'".format(fecha_nacimiento, id)
+        sql="UPDATE profesor SET fechanacimiento='{}' WHERE id='{}'".format(fecha_nacimiento, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado la fecha de nacimiento del registro: {id}")
+            print(f"Se ha actualizado la fecha de nacimiento del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -130,7 +130,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.conncetion.commit()
-            print(f"Se ha actualizado el sexo del registro: {id}")
+            print(f"Se ha actualizado el sexo del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -140,27 +140,27 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado la direccion del registro: {id}")
+            print(f"Se ha actualizado la direccion del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
 
     def updateProfe_ApellidoPaternoID(self, id, apellido_paterno):
-        sql="UPDATE profesor SET apellido_paterno='{}' WHERE id='{}'".format(apellido_paterno, id)
+        sql="UPDATE profesor SET apellidopaterno='{}' WHERE id='{}'".format(apellido_paterno, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el apellido paterno del registro: {id}")
+            print(f"Se ha actualizado el apellido paterno del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
 
     def updateProfe_ApellidoMaternoID(self, id, apellido_materno):
-        sql="UPDATE profesor SET apellido_materno='{}' WHERE id='{}'".format(apellido_materno, id)
+        sql="UPDATE profesor SET apellidomaterno='{}' WHERE id='{}'".format(apellido_materno, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el apellido materno del registro: {id}")
+            print(f"Se ha actualizado el apellido materno del registro: {id}\n")
         except Exception as e:
             print('Error: ',e)
             raise
@@ -170,17 +170,17 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado la nacionalidad del registro: {id}")
+            print(f"Se ha actualizado la nacionalidad del registro: {id}\n")
         except Exception as e:
             print("Error: ", e)
             raise
 
     def updateProfe_CarrerasID(self, id, id_carreras):
-        sql="UPDATE profesor SET id_carreras='{}' WHERE id='{}'".format(id_carreras, id)
+        sql="UPDATE profesor SET idcarreras='{}' WHERE id='{}'".format(id_carreras, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el ID de carreras del registro: {id}")
+            print(f"Se ha actualizado el ID de carreras del registro: {id}\n")
         except Exception as e:
             print("Error: ", e)
             raise
@@ -190,17 +190,17 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el usuario del registro: {id}")
+            print(f"Se ha actualizado el usuario del registro: {id}\n")
         except Exception as e:
             print("Error: ", e)
             raise
 
     def updateProfe_TotalID(self, id, cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras):
-        sql="UPDATE profesor SET cedula='{}',  correo_electronico='{}', telefono='{}', telefono_celular='{}', fecha_nacimiento='{}', sexo='{}', direccion='{}', nombre='{}', apellido_paterno='{}', apellido_materno='{}', nacionalidad='{}', usuario='{}', id_carreras='{}' WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras, id)
+        sql="UPDATE profesor SET cedula='{}',correoelectronico='{}',telefono='{}',telefonocelular='{}',fechanacimiento='{}',sexo='{}',direccion='{}',nombre='{}',apellidopaterno='{}',apellidomaterno='{}',nacionalidad='{}',usuario='{}',idcarreras='{}' WHERE id='{}'".format(cedula, correo_electronico, telefono, telefono_celular, fecha_nacimiento, sexo, direccion, nombre, apellido_paterno, apellido_materno, nacionalidad, usuario, id_carreras, id)
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se han actualizado todos los datos del registro: {id}")
+            print(f"Se han actualizado todos los datos del registro: {id}\n")
         except Exception as e:
             print('Error: ', e)
             raise
@@ -211,7 +211,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print("Se ha creado un nuevo registro")
+            print("Se ha creado un nuevo registro\n")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -221,7 +221,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha eliminado el registro: {id}")
+            print(f"Se ha eliminado el registro: {id}\n")
         except Exception as e:
             print('Error: ',e)
             raise

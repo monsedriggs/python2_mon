@@ -52,7 +52,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el nombre del registro: {id}")
+            print(f"Se ha actualizado el nombre del registro: {id}\n")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -62,7 +62,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha actualizado el tiempo del registro: {id}")
+            print(f"Se ha actualizado el tiempo del registro: {id}\n")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -72,7 +72,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se han actualizado todos los datos del registro: {id}")
+            print(f"Se han actualizado todos los datos del registro: {id}\n")
         except Exception as e:
             print('Error: ', e )
             raise 
@@ -82,7 +82,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print("Se ha creado un nuevo registro")
+            print("Se ha creado un nuevo registro\n")
         except Exception as e:
             print('Error: ', e )
             raise
@@ -92,7 +92,7 @@ class Database:
         try:
             self.cursor.execute(sql)
             self.connection.commit()
-            print(f"Se ha eliminado el registro: {id}")
+            print(f"Se ha eliminado el registro: {id}\n")
         except Exception as e:
             print('Error: ',e)
             raise

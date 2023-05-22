@@ -557,7 +557,7 @@ def menu():
                 elif grupo_op== 'c':#Opcion para actualizar los diferentes parámetros, el usuario elige cuál desea actualizar
                     id_actualizaGroup= input("Ingrese el ID que desea actualizar:\n")
                     if id_actualizaGroup.isnumeric():
-                        nombreGroup= int("Ecriba el nombre:\n")
+                        nombreGroup= input("Ecriba el nombre:\n")
                         V.validar_input(nombreGroup, group.uptadeGroup_ID(id_actualizaGroup, nombreGroup))
                     else:
                         print("Debe ingresar un ID numérico\n")
