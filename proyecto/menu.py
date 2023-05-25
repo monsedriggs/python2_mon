@@ -42,7 +42,10 @@ def menu():
                         id_actualizaTime= input("Ingrese el ID que desea actualizar:\n")
                         if id_actualizaTime.isnumeric():
                             tiempo_Time= input("Indique el nuevo tiempo:\n")
-                            V.validar_input(tiempo_Time, curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time))
+                            if tiempo_Time.isspace() or len(tiempo_Time)==0:
+                                print("Error, debe escribir algo\n")
+                            else:
+                                curso.updateCurso_TiempoID(id_actualizaTime, tiempo_Time)
                         else:
                             print("Debe ingresar un ID numérico\n")
                     elif actualizarC_op== 'c':
@@ -61,7 +64,10 @@ def menu():
                                         print("Error, debe escribir algo\n")
                                     else:
                                         usuario_Total= input("Escriba el usuario:\n")
-                                        V.validar_input(usuario_Total, curso.updateCurso_TotalID(id_actualizaTotal, nombre_Total, descripcion_Total, tiempo_Total, usuario_Total))  
+                                        if usuario_Total.isspace() or len(usuario_Total)==0:
+                                            print("Error, debe escribir algo\n)
+                                        else:
+                                            curso.updateCurso_TotalID(id_actualizaTotal, nombre_Total, descripcion_Total, tiempo_Total, usuario_Total))  
                         else:
                             print("Debe ingresar un ID numérico\n")
                     else:
